@@ -1,0 +1,24 @@
+.DS_Store
+node_modules
+/portfolio-client/dist
+
+# local env files
+/portfolio-client/.env.local
+/portfolio-client/.env.*.local
+
+# Log files
+/portfolio-client/npm-debug.log*
+/portfolio-client/yarn-debug.log*
+/portfolio-client/yarn-error.log*
+
+# Editor directories and files
+/portfolio-client/.idea
+/portfolio-client/.vscode
+/portfolio-client/*.suo
+/portfolio-client/*.ntvs*
+/portfolio-client/*.njsproj
+/portfolio-client/*.sln
+/portfolio-client/*.sw*
+
+# Node modules folder
+/portfolio-client/node_modules
