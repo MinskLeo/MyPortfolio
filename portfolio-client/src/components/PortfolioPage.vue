@@ -7,13 +7,61 @@
 <script>
   import Sidebar from "./Sidebar";
   import Contentpart from "./Contentpart";
+  import ax from '../axios-common'
 
 
 export default {
   name: 'PortfolioPage',
+  data(){
+    return {
+      contacts: null,
+      sidebarBlocks: null,
+      contentpartBlocks: null
+    }
+  },
   components: {
     Sidebar,
     Contentpart
+  },
+  methods: {
+    getContactsInfo () {
+      ax.get('/contactsInfo', { })
+      .then( (result) => {
+        if(result.data){
+          this.$store.commit('updateContactsInfo',result.data);
+        }
+      })
+      .catch( (error) => {
+        this.$store.state.ErrorLoger(error);
+      });
+    },
+    getSidebarBlocks () {
+      ax.get('/sidebarBlocks', { })
+      .then( (result) => {
+        if(result.data){
+          this.$store.commit('updateSidebarBlocks',result.data);
+        }
+      })
+      .catch( (error) => {
+        this.$store.state.ErrorLoger(error);
+      });
+    },
+    getContentpartBlocks () {
+      ax.get('/contentpartBlocks', { })
+      .then( (result) => {
+        if(result.data){
+          this.$store.commit('updateContentpartBlocks',result.data);
+        }
+      })
+      .catch( (error) => {
+        this.$store.state.ErrorLoger(error);
+      });
+    }
+  },
+  created() {
+    this.getContactsInfo();
+    this.getSidebarBlocks();
+    this.getContentpartBlocks();
   }
 }
 </script>

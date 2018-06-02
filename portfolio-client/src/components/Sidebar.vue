@@ -1,31 +1,34 @@
 <template>
   <div class="Sidebar">
     <div class="Sidebar__imageContainer">
-      <img src="https://pp.userapi.com/c836730/v836730182/59aa7/vQc0aZTuKto.jpg" alt="null">
-      <p class="imageContainer__myname">Andrei</p>
+      <img v-bind:src="this.$store.state.contacts.image" alt="null">
+      <p class="imageContainer__myname">{{this.$store.state.contacts.name}}</p>
     </div>
     <div class="ContactsBlock">
-      <p class="ContactsBlock__element ContactsBlock__status">Searching for new job Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque accusamus assumenda ut magnam, provident numquam dolorem explicabo saepe a illo nobis corporis beatae quis voluptatibus praesentium architecto placeat facere rerum?</p>
+      <p class="ContactsBlock__element ContactsBlock__status">
+        {{this.$store.state.contacts.status}}
+      </p>
+
       <div class="hr"></div>
 
       <p class="ContactsBlock__element ContactsBlock__specialization">
-        <i class="fas fa-briefcase element__icon"></i>
-        Front-End Developer
+        <i class="fas fa-briefcase"></i>
+        {{this.$store.state.contacts.specialization}}
       </p>
 
       <p class="ContactsBlock__element ContactsBlock__address">
-        <i class="far fa-building element__icon"></i>
-        Belarus, Minsk
+        <i class="far fa-building"></i>
+        {{this.$store.state.contacts.address}}
       </p>
 
       <p class="ContactsBlock__element ContactsBlock__email">
-        <i class="far fa-envelope element__icon"></i>
-        2119930@gmail.com
+        <i class="far fa-envelope"></i>
+        {{this.$store.state.contacts.email}}
       </p>
 
       <p class="ContactsBlock__element ContactsBlock__phone">
-        <i class="fas fa-phone-volume element__icon"></i>
-        +375 (29) 66-55-275
+        <i class="fas fa-phone-volume"></i>
+        {{this.$store.state.contacts.phone}}
       </p>
 
     </div>
@@ -34,59 +37,27 @@
 
 
 
-    <div class="SidebarBlock">
+    <div class="SidebarBlock" v-bind:key="block._id" v-for="block in this.$store.state.sidebar_blocks">
       <p class="SidebarBlock__title">
-        <i class="fas fa-check title__icon"></i>
-        Skills
+        <i v-bind:class="block.titleIcon"></i>
+        {{block.title}}
       </p>
 
       <div class="SidebarBlock__SubBlocks">
 
-        <div class="SubBlock">
-          <p class="SubBlock__title">C#</p>
+        <div class="SubBlock" v-bind:key="subblock._id" v-for="subblock in block.subBlocks">
+          <p class="SubBlock__title">{{subblock.title}}</p>
           <div class="SubBlock__progressBar">
-            <div class="progressBar__filler">
-              70%
+            <div class="progressBar__filler" v-bind:style="{ width: subblock.progress }">
+              {{subblock.progress}}
             </div>
           </div>
         </div>
-        <div class="SubBlock">
-          <p class="SubBlock__title">React</p>
-          <div class="SubBlock__progressBar">
-            <div class="progressBar__filler">
-              60%
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
 
-    <div class="SidebarBlock">
-      <p class="SidebarBlock__title">
-        <i class="fas fa-globe title__icon"></i>
-        Languages
-      </p>
 
-      <div class="SidebarBlock__SubBlocks">
-
-        <div class="SubBlock">
-          <p class="SubBlock__title">English</p>
-          <div class="SubBlock__progressBar">
-            <div class="progressBar__filler">
-              70%
-            </div>
-          </div>
-        </div>
-        <div class="SubBlock">
-          <p class="SubBlock__title">Russian</p>
-          <div class="SubBlock__progressBar">
-            <div class="progressBar__filler">
-              100%
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
   </div>
@@ -97,7 +68,7 @@ export default {
   name: 'Sidebar',
   data () {
     return {
-      
+
     }
   }
 }
@@ -143,15 +114,15 @@ export default {
   justify-content: flex-start;
   align-items: center;
 }
-.title__icon,
-.element__icon{
+.SidebarBlock__title i,
+.ContactsBlock__element i{
   display: inline-block;
   margin: 0 15px;
   font-size: 25px;
   color: #2fa06d;
 }
 .ContactsBlock__status{
-  padding: 20px 15px;
+  padding: 20px 25px;
   font-style: italic;
   font-weight: 700;
   text-align: center;
@@ -168,7 +139,8 @@ export default {
 
 .SidebarBlock{
   width: 100%;
-  /* margin: 5px 0; */
+  padding-top: 20px;
+  margin-bottom: 30px;
 }
 .SidebarBlock__title{
   width: 100%;
@@ -190,7 +162,6 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px 0;
 }
 .SubBlock{
   width: 100%;

@@ -2103,7 +2103,7 @@
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(1920, 849)
+			location   	(1938, 849)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2116,7 +2116,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@92
-			    location   	(1781, 798)
+			    location   	(1799, 798)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	278
@@ -2131,7 +2131,7 @@
 			annotation 	8
 			autoResize 	TRUE)
 		    (object AssociationViewNew "$UNNAMED$6" @93
-			location   	(1808, 746)
+			location   	(1818, 746)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2148,30 +2148,30 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$7" @94
 				Parent_View 	@93
-				location   	(-1003, -691)
+				location   	(-993, -691)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5B100EBC0151"
 				client     	@93
 				supplier   	@51
 				vertices   	(list Points
-				    (1808, 746)
-				    (1767, 708))
+				    (1818, 746)
+				    (1773, 708))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$8" @95
 				Parent_View 	@93
-				location   	(-1003, -691)
+				location   	(-993, -691)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5B100EBC0153"
 				client     	@93
 				supplier   	@92
 				vertices   	(list Points
-				    (1808, 746)
-				    (1850, 785))
+				    (1818, 746)
+				    (1863, 785))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$57" @96
-			location   	(1854, 952)
+			location   	(1862, 952)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2188,27 +2188,27 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$58" @97
 				Parent_View 	@96
-				location   	(69, -167)
+				location   	(77, -167)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5B1165F2039E"
 				client     	@96
 				supplier   	@92
 				vertices   	(list Points
-				    (1854, 952)
-				    (1879, 912))
+				    (1862, 952)
+				    (1891, 912))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$59" @98
 				Parent_View 	@96
-				location   	(69, -167)
+				location   	(77, -167)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5B1165F203A2"
 				client     	@96
 				supplier   	@91
 				vertices   	(list Points
-				    (1854, 952)
-				    (1830, 992))
+				    (1862, 952)
+				    (1834, 992))
 				line_style 	0)))
 		    (object ClassView "Class" "Logical View::subTitle" @99
 			ShowCompartmentStereotypes 	TRUE
@@ -2333,7 +2333,7 @@
 			annotation 	8
 			autoResize 	TRUE)
 		    (object AssociationViewNew "$UNNAMED$60" @103
-			location   	(2056, 950)
+			location   	(2065, 950)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2350,27 +2350,27 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$61" @104
 				Parent_View 	@103
-				location   	(-68, -139)
+				location   	(-59, -139)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5B1165FC00FF"
 				client     	@103
 				supplier   	@92
 				vertices   	(list Points
-				    (2056, 950)
-				    (2005, 912))
+				    (2065, 950)
+				    (2017, 912))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$62" @105
 				Parent_View 	@103
-				location   	(-68, -139)
+				location   	(-59, -139)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5B1165FC0102"
 				client     	@103
 				supplier   	@102
 				vertices   	(list Points
-				    (2056, 950)
-				    (2108, 989))
+				    (2065, 950)
+				    (2114, 989))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$63" @106
 			location   	(2161, 1148)
