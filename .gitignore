@@ -22,3 +22,4 @@ node_modules
 
 # Node modules folder
 /portfolio-client/node_modules
+/portfolio-server/node_modules
