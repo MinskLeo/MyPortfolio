@@ -185,6 +185,23 @@ export default {
   border-radius: 25px;
   height: 100%;
   padding: 5px 0;
+  
+  animation-name: FillerOnPageLoad;
+  animation-duration: 600ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes FillerOnPageLoad {
+  0%{
+    opacity: 0;
+    width: 0;
+  }
+  50%{
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 </style>
 
