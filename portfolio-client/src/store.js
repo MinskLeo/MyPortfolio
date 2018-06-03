@@ -13,7 +13,8 @@ export default new Vuex.Store({
     contentpart_blocks: null,
     sidebar_blocks: null,
 
-    key: null
+    key: null,
+    isChangeWindowHided: true
   },
   mutations: {
     updateContactsInfo (state, contacts) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     updateAccessKey (state, key) {
       state.key = key;
+    },
+    updateIsChangeWindowHided(state, value) {
+      state.isChangeWindowHided = value;
     }
   },
   actions: {

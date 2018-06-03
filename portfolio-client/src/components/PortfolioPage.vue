@@ -3,26 +3,29 @@
     <router-link to="/admin">Go to Login</router-link>
     <Sidebar></Sidebar>
     <Contentpart></Contentpart>
+    <!-- <div class="panelOpenerBackgorund" v-if="isLoggedIn"></div>
+    <div class="panelOpenerLetter" v-if="isLoggedIn">Panel</div> -->
+    <ChangeDataWindow v-if="isLoggedIn"></ChangeDataWindow>
   </div>
 </template>
 <script>
   import Sidebar from "./Sidebar";
   import Contentpart from "./Contentpart";
+  import ChangeDataWindow from "./ChangeDataWindow";
   import ax from '../axios-common'
 
 
 export default {
   name: 'PortfolioPage',
-  data(){
-    return {
-      contacts: null,
-      sidebarBlocks: null,
-      contentpartBlocks: null
+  computed:{
+    isLoggedIn: function () {
+      return this.$store.state.key;
     }
   },
   components: {
     Sidebar,
-    Contentpart
+    Contentpart,
+    ChangeDataWindow
   },
   methods: {
     getContactsInfo () {
@@ -78,4 +81,5 @@ export default {
   align-items: flex-start;
   margin-bottom: 100px;
 }
+
 </style>
