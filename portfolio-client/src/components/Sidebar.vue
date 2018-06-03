@@ -144,7 +144,7 @@ export default {
 }
 .SidebarBlock__title{
   width: 100%;
-  margin-left: 30px;
+  padding-left: 30px;
   text-align: left;
   font-size: 20px;
   display: flex;
