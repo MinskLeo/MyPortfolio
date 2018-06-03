@@ -17,7 +17,7 @@ export default {
       }).then((result) => {
         this.$store.state.key = key;
       }).catch((error) => {
-        this.$store.state.ErrorLoger(error);
+        this.$store.state.methods.ErrorLoger(error);
       });
     }
   },

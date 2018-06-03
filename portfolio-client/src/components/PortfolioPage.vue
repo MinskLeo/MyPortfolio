@@ -33,7 +33,7 @@ export default {
         }
       })
       .catch( (error) => {
-        this.$store.state.ErrorLoger(error);
+        this.$store.state.methods.ErrorLoger(error);
       });
     },
     getSidebarBlocks () {
@@ -44,7 +44,7 @@ export default {
         }
       })
       .catch( (error) => {
-        this.$store.state.ErrorLoger(error);
+        this.$store.state.methods.ErrorLoger(error);
       });
     },
     getContentpartBlocks () {
@@ -55,7 +55,7 @@ export default {
         }
       })
       .catch( (error) => {
-        this.$store.state.ErrorLoger(error);
+        this.$store.state.methods.ErrorLoger(error);
       });
     }
   },

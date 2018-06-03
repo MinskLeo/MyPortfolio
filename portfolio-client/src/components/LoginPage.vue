@@ -8,7 +8,7 @@
       
       <button class="form__element form__submit" v-if="!this.$store.state.key" v-on:click="onSubmitClick">Submit</button>
       <button class="form__element form__submit" v-if="this.$store.state.key" v-on:click="onSignOutClick">Sign Out</button>
-      <router-link to="/" class="form__element form__link" v-if="this.$store.state.key">Go to Portfolio</router-link>
+      <router-link to="/" class="form__element form__link">Go to Portfolio</router-link>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
         this.$store.state.key = key;
         CookieManager.setCookie('key',key);
       }).catch((error) => {
-        this.$store.state.ErrorLoger(error);
+        this.$store.state.methods.ErrorLoger(error);
         CookieManager.deleteCookie('key');
       });
     },
