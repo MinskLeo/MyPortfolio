@@ -4,6 +4,33 @@
   </div>
 </template>
 
+<script>
+import CookieManager from "./cookieManager.js";
+import ax from './axios-common';
+
+export default {
+  name: 'App',
+  methods : {
+    checkKey (key) {
+      ax.post('/checkKey', {
+        key: key
+      }).then((result) => {
+        this.$store.state.key = key;
+      }).catch((error) => {
+        this.$store.state.ErrorLoger(error);
+      });
+    }
+  },
+  created() {
+    let key = CookieManager.getCookie('key');
+    if(key){
+      this.checkKey(key);
+    }
+  }
+}
+</script>
+
+
 <style>
 *{
   padding: 0;

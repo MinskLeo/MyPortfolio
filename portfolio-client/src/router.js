@@ -2,9 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import PortfolioPage from "@/components/PortfolioPage";
-
-import Sidebar from "@/components/Sidebar"
-import Contentpart from "@/components/Contentpart"
+import LoginPage from "@/components/LoginPage";
 
 Vue.use(Router)
 
@@ -13,6 +11,10 @@ export default new Router({
     {
       path: '/',
       component: PortfolioPage
+    },
+    {
+      path: '/admin',
+      component: LoginPage
     }
   ]
 })

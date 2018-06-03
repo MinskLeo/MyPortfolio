@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <router-link to="/admin">Go to Login</router-link>
     <Sidebar></Sidebar>
     <Contentpart></Contentpart>
   </div>

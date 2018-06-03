@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const fs = require('fs');
 
+// Mongo
 mongoose.connect('mongodb://localhost/portfolio');
 const Contact = mongoose.model('Contact',{
   name: String,
@@ -24,6 +26,16 @@ const ContentpartBlocks = mongoose.model('ContentpartBlocks',{
   subBlocks: Array
 },'contentpart_blocks');
 
+// Variables
+let accessKey = null;
+if (fs.existsSync('access.json')){
+  accessKey = JSON.parse(fs.readFileSync('access.json') ).key;
+}else{
+  console.log("NO ACCESS KEY FILE!");
+}
+
+
+// Settings
 app.use(bodyParser.json() );
 
 // Logs
@@ -66,6 +78,18 @@ app.get('/contentpartBlocks', (req, res) => {
   .catch((error) => {
     res.sendStatus(500);
   });
+});
+
+// POST routes
+app.post('/checkKey', (req, res) => {
+  if(req.body.key){
+    console.log("Checking: ("+accessKey+") "+req.body.key);
+    if(accessKey===req.body.key){
+      res.sendStatus(200);
+    }else{
+      res.sendStatus(403);
+    }
+  }
 });
 
 

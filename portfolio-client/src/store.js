@@ -11,7 +11,9 @@ export default new Vuex.Store({
 
     contacts: '123',
     contentpart_blocks: null,
-    sidebar_blocks: null
+    sidebar_blocks: null,
+
+    key: null
   },
   mutations: {
     updateContactsInfo (state, contacts) {
@@ -22,6 +24,9 @@ export default new Vuex.Store({
     },
     updateContentpartBlocks (state, blocks) {
       state.contentpart_blocks = blocks;
+    },
+    updateAccessKey (state, key) {
+      state.key = key;
     }
   },
   actions: {

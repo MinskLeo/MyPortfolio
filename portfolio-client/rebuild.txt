@@ -1,0 +1,2 @@
+1. Вынести методы на отображение ошибок в объект methods в state в $store
+2. Вынести метод checkKey из LoginPage.vue и App.vue в $store
